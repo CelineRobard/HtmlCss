@@ -32,3 +32,11 @@ Poursuite du projet : créer la page de renouvellement du mot de passe, adapter 
 Amélioration : utiliser bootstrap pour alléger la css et jQuery pour faciliter l'évolution du code
 
 Correction : centraliser les éléments réutilisés et faire des inclusions, jQuery pour la gestion de l'ordre des articles
+
+
+![accueil](https://user-images.githubusercontent.com/88492160/170089204-44dc5b27-23e6-4b22-97f1-007a3e1588c2.PNG)
+![vetments_1](https://user-images.githubusercontent.com/88492160/170089251-aac54f35-a883-4387-a1ab-da242694dc32.PNG)
+![vetments_2](https://user-images.githubusercontent.com/88492160/170089255-975bc0c1-33d6-40fa-a956-5821dc38322a.png)
+![films](https://user-images.githubusercontent.com/88492160/170089279-a41f66dc-4c25-4580-b1c2-12a42885d578.PNG)
+![nousJoindre](https://user-images.githubusercontent.com/88492160/170089301-361e7d35-01ce-4d68-98e7-4cb9c1e69288.PNG)
+![login](https://user-images.githubusercontent.com/88492160/170089326-c3fe47a4-aacb-4947-8fb3-997e2ea3e5c7.PNG)
