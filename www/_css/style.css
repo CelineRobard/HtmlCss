@@ -1,0 +1,632 @@
+/* Eléments structurants */
+
+body{
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header{
+    position: sticky;
+    background-color: white;
+    top:0;
+    left:0;
+    right:0;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: stretch;
+    border-bottom: 1px solid black;
+    padding: 1%;
+    z-index:5;
+}
+
+main{
+    padding: 2% 5%;
+}
+
+nav{
+ display:flex;
+ flex-direction:row;
+ justify-content:space-between;
+ align-items:center;
+}
+
+footer{
+    border-top: 1px solid black;
+    background-color: white;
+}
+/* Autres éléments */
+
+h1{
+    color:coral;
+}
+
+button{
+    background-color: rgba(255, 255, 255, 0.705);
+    border:none;
+    font-size: medium;
+    width: 150px;
+    height: 50px;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.39);
+}
+button:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+    color: whitesmoke;
+    text-shadow: 
+    0 0 30px rgba(255, 255, 255, 0.30),
+    0 0 12px rgba(255, 255, 255, 0.60),
+    0 0 21px rgba(255, 255, 255, 0.90),
+    0 0 34px rgba(255, 255, 255, 0.78),
+    0 0 54px rgba(255, 255, 255, 0.92);
+}
+
+/******************* Classes *********************/
+
+/* Font pour les citations */
+.emmafelix{
+    font-family:'Courier New', Courier, monospace ;
+}
+
+/* Logo */
+header > a:first-of-type > img{
+    width: 250px;
+}
+/* Icône connexion */
+header > a:last-of-type > img{
+    width: 44px;
+}
+
+
+header li{
+    font-size: larger;
+    border-right:3px solid black;
+    font-family: verdana;
+}
+
+header li:last-of-type{
+    border-right:none;
+}
+
+
+nav > ul{
+    margin:0;
+    padding:0;
+    list-style-type: none;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:start;
+    align-items:stretch;
+}
+
+nav > ul > li{
+    line-height: 3em;
+    text-align: center;
+    width: 10em;
+}
+
+nav > ul > li > a:link{
+    text-decoration: none;
+    color:black
+}
+
+nav > ul > li > a:hover{
+    text-decoration: none;
+    color:black;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+nav > ul > li > a:active{
+    text-decoration: none;
+    color:black
+}
+
+nav > ul > li > a:visited{
+    text-decoration: none;
+    color:black
+}
+
+header > nav{
+    min-width: 650px;
+}
+
+
+
+/********************** Accueil ***********************/
+
+/* Citation : début */
+
+.citation{
+    text-align: center;
+    font-weight: lighter;
+    font-size: larger;
+}
+.citation::before{
+    content:'\275D \a';
+    font-size: xxx-large;
+}
+.citation::after{
+    content:'\a \275E';
+    font-size: xxx-large;
+}
+.cite{
+    text-align: right;
+    font-size: small;
+    margin-right: 15%;
+}
+/* Citation : fin */
+
+/* Blocs d'accès rapide : début */
+
+#accueil > section{
+    min-height:400px;
+    padding: 5% 10%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr;
+    grid-column-gap:5%;
+    justify-content: center;
+    align-content: center;
+    grid-template-areas:
+    "service1 service2"
+    ;
+}
+#accueil > section > div{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.39);
+}
+#accueil > section > div > div{
+    background-color: rgba(0, 0, 0, 0.39);
+    color:white;
+    text-align: center;
+    height:40%;
+    padding: 0 5%;
+}
+#accueil > section > div:nth-child(1){
+    background-image: url(../_images/estivale.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: service1;
+    
+}
+#accueil > section > div:nth-child(2){
+    background-image: url(../_images/films.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: service2;
+}
+/* Blocs d'accès rapide : fin */
+
+/************** Page des vêtements ************/
+
+#vetements > section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#vetements-dec > section {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
+}
+/* Titre de section */
+#vetements > section > h2,
+#vetements-dec > section > h2{
+    position:absolute;
+    visibility: hidden;
+}
+
+/* Tri */
+
+.tri li:first-child::before{
+    content: '\21C5';
+    font-weight: bolder;
+}
+
+
+/* Blocs d'image et description */
+
+/* Conteneur niveau 1 : image en grand + miniatures + description */
+#vetements > section > article,
+#vetements-dec > section > article {
+    position: relative;
+    flex-basis: 400px;
+    margin: 2%;
+}
+
+/* Conteneur niveau 2 : image en grand */
+.pleine {
+    position: relative;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Taille des images */
+img {
+    width: 100%;
+  }
+    /* Au survol du conteneur, l'image en grand change d'opacité */
+    .pleine:hover img {
+        filter: opacity(70%);
+        transition: 2s;
+    }
+
+/* Nom du produit */
+.pleine > h3 {
+    position: absolute;
+    width: 100%;
+    padding: 2em 0;
+    margin: 0px;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.39);
+    color: white;
+    text-align: center;
+    font-weight: lighter;
+    font-size: medium;
+    z-index: 1;
+}
+
+    /* Au survol du conteneur, le nom du produit s'étire */
+    .pleine:hover h3{
+        color: rgba(0, 0, 0, 0.5);
+        padding-top: 3em;
+        padding-bottom: 5em;
+        background-color: rgba(195, 195, 195, 0.6);
+        transition: 1s;
+    }
+
+/* Boutons */
+.pleine .action{
+    position: absolute;
+    z-index: 2;
+    margin: 3%;
+    color:coral;
+    visibility: hidden;        /* Les deux boutons sont cachés */
+  }
+
+.pleine .action:first-of-type{ /* Etoile pour ajouter aux favoris */
+    top: 0;                    /* Position par rapport au haut du conteneur */
+    right: 0;                  /* Position par rapport à droite du conteneur */
+    font-size: 2em;
+    width:100px;
+    box-shadow: none;
+  }
+ 
+.pleine .action:last-of-type{ /* Bouton pour acheter */
+    bottom: 0;                /* Position par rapport au bas du conteneur */
+    right: 30%;               /* Centrer */
+  }
+
+    /* Les boutons apparaissent au survol du conteneur*/
+    .pleine:hover .action {
+        visibility: visible;
+        transition: 8s;
+    }
+
+/* Conteneur niveau 2 : miniatures */
+.miniature {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 3%;
+    margin: 5% 5% 0;
+}
+
+.miniature > div {
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+    /* Au survol de la miniature, l'image prend 100% du conteneur niveau 1 */
+    .miniature > div:hover img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 100% 5s;
+    }
+
+  /* Description */
+details {
+    margin: 5% 0;
+}  
+details > p:first-of-type {    /*Description du produit */
+    text-align: justify;
+}
+details > p:last-of-type {
+    text-align: right;         /*Prix*/
+}
+
+/***************** Page des films ****************/
+
+/* Conteneur pour le contenu principal */
+#films{                           /* main */
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr, 1fr,1fr,1fr;
+    grid-row-gap: 50px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.70), rgb(0, 0, 0,0),rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.99)),url(../_images/istockphoto-1288644051-612x612transform.png);
+    background-repeat: repeat;
+    background-size: fit;
+}
+
+/* Conteneur pour grouper les films d'une catégorie similaire */
+#films > section{
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-content: center;
+}
+
+/* Conteneur pour les éléments d'un même film */
+#films > section > article{
+    background-color: rgba(255, 255, 255, 0.9);
+    display:flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 50px 30px 0 0;
+    transform: scale(1);
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.39);
+}
+
+    /* Au survol du conteneur du film, le bloc au complet s'agrandit pour un effet zoomé, le fonf perd la transparence */
+    #films > section > article:hover{
+        transform:scale(1.1);
+        z-index: 2;
+        background-color:rgb(255, 255, 255);
+    }
+
+    /* Au survol du conteneur du film, l'élément vidéo change d'opacité */ 
+    #films > section > article:hover video{
+        opacity: 100%;
+    }
+
+    /* Au survol du conteneur du film, l'élément titre vidéo prend un shadow */ 
+    #films > section > article:hover h3{
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.08);
+    }
+
+/* Conteneur pour le contenu adittionnel */
+aside{
+    position: fixed;
+    right:0;
+    top:300px;
+    width: 200px;
+    background-color: blanchedalmond;
+    font-family:'Courier New', Courier, monospace ;
+    z-index: 3;
+    box-shadow: 0 1px 8px 0 rgba(172, 126, 126, 0.39);
+    border-radius: 10px;
+}
+aside > img{
+    width: 100%;
+}
+aside > p{
+    padding:10px;
+}
+
+/* Titres */
+#films > h1{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    color:coral;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.30),
+                 0 0 5px rgba(0, 0, 0, 0.50),
+                 0 0 10px rgba(0, 0, 0, 0.30),
+                 0 0 20px rgba(0, 0, 0, 0.15);
+}
+#films > section > h2{
+    position:absolute;
+    color: whitesmoke;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.60),
+                 0 0 5px rgba(0, 0, 0, 0.50),
+                 0 0 10px rgba(0, 0, 0, 0.30),
+                 0 0 20px rgba(0, 0, 0, 0.15),
+                 0 0 40px rgba(0, 0, 0, 0.05);
+}
+#films > section > article > h3{
+    text-transform: uppercase;
+    font-size: medium;
+    margin-left:10px;
+}
+#films > section > article > h4{
+    font-size: small;
+    margin-left: 10px;
+}
+
+/* Afficher le nombre d'étoiles reçues après le titre du film */
+.cinqetoiles > h3::after{
+    content:'\0020 \2605 \2605 \2605 \2605 \2605';
+    font-weight: lighter;
+    font-size: large;
+    color: rgb(255, 127, 80);
+}
+.quatreetoiles > h3::after{
+    content:'\0020 \2605 \2605 \2605 \2605 \2606';
+    font-weight: lighter;
+    font-size: large;
+    color: coral;
+}
+.troisetoiles > h3::after{
+    content:'\0020 \2605 \2605 \2605 \2606 \2606';
+    font-weight: lighter;
+    font-size: large;
+    color: coral;
+}
+
+/* Vidéos */
+video{
+    width: 400px;
+    align-self: center;
+    opacity: 80%;
+}
+
+/* Paragraphe description du film */
+#films > section > article > p{
+    background-color: blanchedalmond;
+    padding: 20px;
+    margin: 0;
+    height: 65px;
+    font-size: smaller;
+}
+
+/* Liste description du film */
+#films > section > article > ul{
+    font-size: smaller;
+    margin: 0;
+}
+#films > section > article > ul:last-of-type > li:last-of-type{
+    margin-bottom: 20px;
+}
+
+/***************** Page de présenttaion *****************/
+
+#presentation{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 2fr), 1fr;
+    grid-row-gap: 100px;
+}
+
+/* Bulles */
+.notions div{
+    list-style-type: none;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.notions div>div{
+    clip-path: ellipse();
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    color:white;
+    transform: scale(1);
+}
+.notions div>div:hover{
+    text-shadow: 
+    0 0 6px rgba(255, 255, 255, 0.2),
+    0 0 12px rgba(255, 255, 255, 0.712);
+    transform: scale(1.1);
+}
+.notions div>div:nth-child(1){
+    background-color: coral;
+}
+.notions div>div:nth-child(2){
+    background-color: cornflowerblue;
+}
+.notions div>div:nth-child(3){
+    background-color: cadetblue;
+}
+.notions div>div:nth-child(4){
+    background-color: rgb(253, 151, 164);
+}
+.notions div>div:nth-child(5){
+    background-color:rgb(131, 130, 130);
+}
+/* Conteneur paragraphe et visuel 1 */
+.auteur{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+}
+/* Conteneur paragraphe et visuel 2 */
+.objectif{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/* Conteneurs de section */
+.auteur,
+.objectif{
+    align-items: center;
+    justify-content: space-around;
+}
+.auteur p,
+.objectif p{
+    max-width: 600px;
+}
+.auteur img,
+.objectif img{
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.39);
+    max-width: 500px;
+}
+/* Titre de section */
+#presentation > section > h2{
+    position:absolute;
+    visibility: hidden;
+}
+/************** Page de connexion **************/
+
+
+#connexion > form{
+    min-height: 600px;
+    background-image: url(../_images/istockphoto-1136596909-612x612.jpg);
+    background-position: left;
+    background-repeat: no-repeat;       /* repeat, repeat-x ou y, no-repeat, space, round, initial, inherit*/
+    background-size: cover;             /* auto, length(width and height), percentage,cover,contain,initial,inherit */
+    display:flex;
+    flex-direction: row-reverse;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+}
+#connexion > form > fieldset{
+    position:relative;
+    flex-basis: 30%;
+    background-color: rgba(0, 0, 0, 0.39);
+    border:none;
+    padding:5%;
+    display:flex;
+    flex-direction: column;             /* row, row-reverse, column, column-reverse */
+    flex-wrap: nowrap;                  /* nowrap, wrap, wrap-reverse */
+    justify-content:center;             /* flex-start, flex-end, space-between, center, space-around */
+}
+#connexion > form > fieldset > legend{
+    position:absolute;
+    top:10%;
+}
+#connexion > form > fieldset > label{
+    font-weight: bolder;
+    margin-top:10%;
+    color: blanchedalmond;
+}
+#connexion > form > fieldset > input{
+    height:3em;
+    background-color: blanchedalmond;
+    border:none;
+    padding: 2px;
+}
+#connexion > form > fieldset > button{
+    margin: 30% auto;
+}
+#connexion > form > fieldset > input+div{
+    text-align: right;
+    font-size: smaller;
+    font-weight: bolder;
+    margin-top: 5%;
+}
+#connexion > form > fieldset > input+div > a:link{
+    text-decoration: none;
+    color:blanchedalmond;
+}
+#connexion > form > fieldset > input+div > a:hover{
+    text-decoration: none;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+    color:blanchedalmond;
+}
+#connexion > form > fieldset > input+div > a:active{
+    text-decoration: none;
+    color:blanchedalmond;
+}
+#connexion > form > fieldset > input+div > a:visited{
+    text-decoration: none;
+    color:blanchedalmond;
+}
