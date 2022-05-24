@@ -1,4 +1,4 @@
-# Emma & Félix (HTML/Css)
+# HTML/Css
 
 Projet de site statique réalisé en HTML/Css dans le cadre des cours (début de session), mettant en application l'utilisation des dispositions flex et grid, des balises structurantes, balises vidéo, Css (display, position, transform, z-index, opacity, shadow...). Site offrant à la fois un service de magasinage en ligne et un service de streaming vidéo.
 
@@ -6,16 +6,19 @@ La rubrique de magasinage permet de présenter une série d'articles sous forme 
 
 La rubrique de streaming permet de présenter plusieurs collections de films sous forme de cartes (titre, note, visuel, description, détails) groupés par catégorie et de pré-visualiser la bande annonces de films.
 
------------------
 
 - Navigation : Menu principal dans la barre supérieure, Accès rapides en page d'accueil, Navigation linéaire en pied de page
 
-- Structure : 
-        Accueil
-        Accueil > Vêtements
-        Accueil > Films
-        Accueil > Nous joindre
-        Accueil > Espace abonné(e)s
+- Structure (n1 et n2) : 
+Accueil
+
+Accueil > Vêtements
+
+Accueil > Films
+
+Accueil > Nous joindre
+
+Accueil > Espace abonné(e)s
 
 - Dispositions : grid et flex
 
@@ -23,6 +26,7 @@ La rubrique de streaming permet de présenter plusieurs collections de films sou
 
 
 (considérons uniquement la partie interface/view)
+
 Poursuite du projet : créer la page de renouvellement du mot de passe, adapter la rubrique des films aux abonnés (ajout des notes, affichage en fonction ), créer les pages de panier d'achats et la page de gestion de profil-abonné, créer l'espace de gestion des contenus et d administration des utilisateurs
 
 Amélioration : utiliser bootstrap pour alléger la css et jQuery pour faciliter l'évolution du code
